@@ -5,63 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My PDF Library</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 800px; padding: 20px; }
-        h1 { color: #333; }
-        h2 { color: #666; margin-top: 30px; }
-        ul { padding-left: 20px; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .category {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .category h2 {
+            color: #35424a;
+            margin-top: 0;
+            border-bottom: 2px solid #e8491d;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            color: #e8491d;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #35424a;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h1>My PDF Library</h1>
+    <header>
+        <div class="container">
+            <h1>My PDF Library</h1>
+        </div>
+    </header>
 
-    <h2>Linux Tutorials</h2>
-    <ul>
-        <li><a href="viewer.html?file=./Linux.pdf">Linux Basics Tutorial</a></li>
-<!--         <li><a href="viewer.html?file=/linux-advanced.pdf">Advanced Linux Concepts</a></li> -->
-    </ul>
+    <div class="container">
+        <div class="category">
+            <h2>Linux Tutorials</h2>
+            <ul>
+                <li><a href="viewer.html?file=Linux.pdf">Linux Basics Tutorial</a></li>
+<!--                 <li><a href="viewer.html?file=linux-advanced.pdf">Advanced Linux Concepts</a></li> -->
+            </ul>
+        </div>
 
-    <!-- <h2>Programming Languages</h2>
-    <ul>
-        <li><a href="/python-basics.pdf">Python for Beginners</a></li>
-        <li><a href="/javascript-guide.pdf">JavaScript Essentials</a></li>
-    </ul>
+<!--         <div class="category">
+            <h2>Programming Languages</h2>
+            <ul>
+                <li><a href="viewer.html?file=python-basics.pdf">Python for Beginners</a></li>
+                <li><a href="viewer.html?file=javascript-guide.pdf">JavaScript Essentials</a></li>
+            </ul>
+        </div> -->
 
-    <h2>Web Development</h2>
-    <ul>
-        <li><a href="/html-css-basics.pdf">HTML and CSS Fundamentals</a></li>
-        <li><a href="/responsive-design.pdf">Responsive Web Design</a></li>
-    </ul>
-
-    <h2>Data Science</h2>
-    <ul>
-        <li><a href="/data-analysis-python.pdf">Data Analysis with Python</a></li>
-        <li><a href="/machine-learning-intro.pdf">Introduction to Machine Learning</a></li>
-    </ul>
-
-    <h2>Other Resources</h2>
-    <ul>
-        <li><a href="/git-github-guide.pdf">Git and GitHub Guide</a></li>
-        <li><a href="/docker-containers.pdf">Docker and Containers</a></li>
-    </ul> -->
-
-    <script>
-        // JavaScript for handling page redirections
-        document.querySelectorAll('h2').forEach(headline => {
-            headline.addEventListener('click', function() {
-                const category = this.textContent.toLowerCase().replace(/\s+/g, '-');
-                window.location.hash = category;
-            });
-        });
-
-        // Check for hash on page load and scroll to the appropriate section
-        window.onload = function() {
-            if(window.location.hash) {
-                const element = document.querySelector(window.location.hash);
-                if(element) element.scrollIntoView();
-            }
-        }
-    </script>
+        <!-- Add more categories as needed -->
+    </div>
 </body>
 </html>
