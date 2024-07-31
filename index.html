@@ -3,91 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PDF Library</title>
+    <title>PDF Library</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
             color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #f4f4f4;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
-        }
-        header h1 {
-            margin: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
             text-align: center;
-            padding-bottom: 20px;
-        }
-        .category {
-            background: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 1em;
             border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .pdf-list {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .category h2 {
-            color: #35424a;
-            margin-top: 0;
-            border-bottom: 2px solid #e8491d;
+        .pdf-list h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-        ul {
+        .pdf-list ul {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e8e8e8;
+        .pdf-list li {
+            margin-bottom: 10px;
         }
-        li:last-child {
-            border-bottom: none;
-        }
-        a {
-            color: #e8491d;
+        .pdf-list a {
+            color: #3498db;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
-        a:hover {
-            color: #35424a;
+        .pdf-list a:hover {
+            color: #2980b9;
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>My PDF Library</h1>
-        </div>
+        <h1>PDF Library</h1>
     </header>
-
-    <div class="container">
-        <div class="category">
-            <h2>Linux Tutorials</h2>
+    <main>
+        <section class="pdf-list">
+            <h2>Available PDFs</h2>
             <ul>
-                <li><a href="viewer.html?file=Linux.pdf">Linux Tutorial</a></li>
+                <li><a href="Linux.pdf" target="_blank">Linux Tutorial</a></li>
             </ul>
-        </div>
-
-        <!-- Add more categories as needed -->
-
-        <div class="category">
-            <h2>Direct Links (for testing)</h2>
-            <ul>
-                <li><a href="Linux.pdf" target="_blank">Direct: Linux Tutorial PDF</a></li>
-            </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
