@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PDF Library</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 800px; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #666; margin-top: 30px; }
+        ul { padding-left: 20px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>My PDF Library</h1>
+
+    <h2>Linux Tutorials</h2>
+    <ul>
+        <li><a href="/linux.pdf">Linux Basics Tutorial</a></li>
+        <!-- <li><a href="/linux-advanced.pdf">Advanced Linux Concepts</a></li> -->
+    </ul>
+
+    <!-- <h2>Programming Languages</h2>
+    <ul>
+        <li><a href="/python-basics.pdf">Python for Beginners</a></li>
+        <li><a href="/javascript-guide.pdf">JavaScript Essentials</a></li>
+    </ul>
+
+    <h2>Web Development</h2>
+    <ul>
+        <li><a href="/html-css-basics.pdf">HTML and CSS Fundamentals</a></li>
+        <li><a href="/responsive-design.pdf">Responsive Web Design</a></li>
+    </ul>
+
+    <h2>Data Science</h2>
+    <ul>
+        <li><a href="/data-analysis-python.pdf">Data Analysis with Python</a></li>
+        <li><a href="/machine-learning-intro.pdf">Introduction to Machine Learning</a></li>
+    </ul>
+
+    <h2>Other Resources</h2>
+    <ul>
+        <li><a href="/git-github-guide.pdf">Git and GitHub Guide</a></li>
+        <li><a href="/docker-containers.pdf">Docker and Containers</a></li>
+    </ul> -->
+
+    <script>
+        // JavaScript for handling page redirections
+        document.querySelectorAll('h2').forEach(headline => {
+            headline.addEventListener('click', function() {
+                const category = this.textContent.toLowerCase().replace(/\s+/g, '-');
+                window.location.hash = category;
+            });
+        });
+
+        // Check for hash on page load and scroll to the appropriate section
+        window.onload = function() {
+            if(window.location.hash) {
+                const element = document.querySelector(window.location.hash);
+                if(element) element.scrollIntoView();
+            }
+        }
+    </script>
+</body>
+</html>
